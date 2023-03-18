@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int n,i,j,s1=0,s2=0,a,b;
+    scanf("%d",&n);
+    char s[100];
+    for(i=0;i<n;i++)
+    {
+        scanf("%s",s);
+        if(s[0]=='s')
+        {
+            scanf("%d\n",&a);
+            s1=s1+(a*a);
+        }
+        else
+        {
+            scanf(" %d %d\n",&a,&b);
+            s2=s2+(a*b);
+        }
+    }
+    printf("%d",s1+s2);
+
+    return 0;
+}
