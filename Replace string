@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    // Write C code here
+   // printf("Hello world");
+   int n;
+   scanf("%d",&n);
+   int a[n],l[n];
+   char b[n][10000];
+   for(int i=0;i<n;i++){
+       scanf("%d %s\n",&a[i],&b[i]);
+       l[i]=strlen(b[i]);
+   }
+   
+   for(int i=0;i<n;i++){
+       for(int j=0;j<n;j++){
+           if(a[i]==l[j])
+               printf("%d %s\n",a[i],b[j]);
+           }
+       }
+ 
+    return 0;
+}
+
+input & output
+
+INPUT
+2
+5 dog
+3 movie
+
+
+OUTPUT
+5 movie
+3 dog
