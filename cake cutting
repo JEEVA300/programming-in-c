@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d",&n);
+    int a[n],k=2;
+    a[1]=2;
+    for(int i=2;i<=n;i++)
+    {
+        if((i+1)%2!=0)
+        {
+            k++;
+        }
+        a[i]=a[i-1]+k-1;
+    }
+    printf("%d",a[n]);
+}
+
+INPUT:
+1
+OUTPUT:
+2
+  or
+INPUT:
+4
+OUTPUT:
+9
