@@ -1,0 +1,46 @@
+1.
+Input 
+renuka
+amirtha
+
+OUTPUT
+e
+
+2.
+INPUT 
+amirtha
+amirtha
+
+OUTPUT
+-1
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char str1[101],str2[101];
+    scanf("%s %s",str1,str2);
+    
+    int l1=strlen(str1),l2=strlen(str2),c,count=0;
+    for(int i=0;i<l1;i++)
+    {
+        c=0;
+        for(int j=0;j<l2;j++)
+        {
+            if(str1[i]!=str2[j])
+            {
+            c++;
+            }
+        
+        }
+        if(c==l2)
+        {
+            printf("%c",str1[i]);
+            count++;
+            break;
+        }
+    }
+    if(count==0)
+    printf("-1");
+}
