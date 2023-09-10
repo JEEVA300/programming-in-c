@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int a,b,c,gcd=0,min=0;
+    scanf("%d %d %d",&a,&b,&c);
+    if(a<b&&a<c)
+    {
+        min=a;
+    }
+    else if(b<c)
+    {
+        min=b;
+    }
+    else
+    {
+        min=c;
+    }
+    for(int i=1;i<=min;i++)
+    {
+        if(a%i==0 && b%i==0 && c%i==0)
+        {
+            gcd=i;
+        }
+    }
+    int lcm=(a*b*c)/gcd;
+    printf("%d %d",gcd,lcm);
+
+    return 0;
+}
