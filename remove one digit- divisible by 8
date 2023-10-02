@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    scanf("%d",&n);
+    int x=log10(n)+1;
+    int y=x-2;
+    int z=n/10,i=2,j=1,p=0;
+    if(z%8==0)
+    {
+        printf("YES");
+        p=1;
+        y=0;
+    }
+    while(y>0)
+    {
+        int c=pow(10,i);
+        int d=pow(10,j);
+        int a=(n/c)*d+(n%d);
+        if(a%8==0)
+        {
+            printf("YES");
+            p=1;
+            y=0;
+            break;
+        }
+        i++;
+        j++;
+        y--;
+    }
+    int s=0;
+    if(p==0)
+    {
+        int l=pow(10,x-1);
+        int b=n%l;
+        if(b%8==0)
+        {
+            printf("YES");
+            s=1;
+        }
+    }
+    if(s==0&&p==0)
+    {
+        printf("NO");
+    }
+    return 0;
+}
