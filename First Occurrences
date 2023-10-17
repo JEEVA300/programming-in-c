@@ -1,0 +1,53 @@
+Given two strings, find the first occurrence of all characters of second string in the first string and
+
+print the characters between the least and the highest index
+
+I/P: ZOHOCORPORATION PORT
+
+O/P: OHOCORPORAT
+
+
+
+Explanation: The index of P in first string is 7, O is 1, R is 6 and T is 11. The largest range is 1 – 11.
+
+So print the characters of the first string in this inex range i.e. OHOCORPORAT
+
+
+
+#include <stdio.h>
+
+int main() {
+    char s1[1000],s2[1000];
+    scanf("%s\n%s",s1,s2);
+    int l1=strlen(s1),l2=strlen(s2),a[10000],p=0;
+    for(int i=0;i<l2;i++)
+    {
+        for(int j=0;j<l1;j++)
+        {
+            if(s2[i]==s1[j])
+            {
+                a[p]=j;
+                p++;
+                break;
+            }
+        }
+    }
+    for(int i=0;i<p-1;i++)
+    {
+        for(int j=i+1;j<p;j++)
+        {
+            if(a[i]>a[j])
+            {
+                int t=a[i];
+                a[i]=a[j];
+                a[j]=t;
+            }
+        }
+    }
+    for(int i=a[0];i<=a[p-1];i++)
+    {
+        printf("%c",s1[i]);
+    }
+
+    return 0;
+}
