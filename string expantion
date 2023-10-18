@@ -1,0 +1,34 @@
+input:
+     a5b1c2
+output
+     aaaaabcc
+
+
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    char s[1000],t;
+    scanf("%s",s);
+    int l=strlen(s),num=0;
+    for(int i=0;i<l;i++)
+    {
+        if(isdigit(s[i]))
+        {
+            t=s[i-1];
+            while(isdigit(s[i]))
+            {
+                int y=s[i]-48;
+                num=(num*10)+y;
+                i++;
+            }
+            for(int j=0;j<num;j++)
+            {
+                printf("%c",t);
+            }
+        }
+        num=0;
+    }
+
+    return 0;
+}
