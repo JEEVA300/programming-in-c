@@ -5,8 +5,8 @@ n=3
 7 8 9
 output:
 7 4 1 
-8 5 4 
-9 8 7 
+8 5 2 
+9 6 3 
 
 explanation:
 
@@ -16,7 +16,6 @@ explanation:
 #include <stdio.h>
 
 int main() {
-    // Write C code here
     int n,m[1000][1000];
     scanf("%d",&n);
     for(int i=1;i<=n;i++)
@@ -26,12 +25,15 @@ int main() {
             scanf("%d ",&m[i][j]);
         }
     }
-    for(int i=1;i<=n;i++)
+ for(int i=1;i<=n;i++)
     {
-        for(int j=1;j<=n;j++)
+        for(int j=i;j<=n;j++)
         {
+            int t=m[i][j];
             m[i][j]=m[j][i];
+            m[j][i]=t;
         }
+       
     }
   for(int i=1;i<=n;i++)
     {
