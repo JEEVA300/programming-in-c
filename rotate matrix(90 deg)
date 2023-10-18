@@ -1,0 +1,45 @@
+Input:
+n=3
+1 2 3
+4 5 6
+7 8 9
+output:
+7 4 1 
+8 5 4 
+9 8 7 
+
+explanation:
+
+          rotate a matrix 90 deg = transpose the matrix + reverse rowwwise
+                                                      
+
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int n,m[1000][1000];
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            scanf("%d ",&m[i][j]);
+        }
+    }
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            m[i][j]=m[j][i];
+        }
+    }
+  for(int i=1;i<=n;i++)
+    {
+        for(int j=n;j>=1;j--)
+        {
+             printf("%d ",m[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
