@@ -1,0 +1,64 @@
+TEST CASE 1:
+ input:
+    n=6
+output:
+   TRUE
+
+TEST CASE 2:
+ input:
+    n=7
+output:
+   FALSE
+
+explanation
+dolus-> [2,3,5]
+prime factor of 6 is (2 * 3) -> 2,3 is in dolus so "TRUE"
+prime factor of 7 is (3 * 7) -> 7 is not in dolus so "FALSE"
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    //printf("Hello world");
+    int n,isprime=0,flag=1;
+    scanf("%d",&n);
+    for(int i=2;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            isprime=1;
+            for(int j=2;j<=i/2;j++)
+            {
+                if(i%j==0)
+                {
+                isprime=0;
+                break;
+                }
+            }
+        if(isprime==1)
+        {
+            if(i==2||i==3||i==7)
+            {
+                flag=1;
+            }
+            else
+            {
+                flag=0;
+                break;
+            }
+        }
+        }
+    }
+    if(flag==1)
+    {
+        printf("TRUE");
+    }
+    else
+    {
+        printf("FALSE");
+    }
+    return 0;
+}
