@@ -21,17 +21,14 @@ int main ()
       }
       else
       {
-      s2[k]='\0';
-      for(int j=k-1;j>=0;j--)
-      {
-          printf("%c",s2[j]);
-      }
-      }
-      if(i!=0)
-      {
-    printf(" ");
-    k = 0;
-  }
+            s2[k]='\0';
+            for(int j=k-1;j>=0;j--)
+            {
+                printf("%c",s2[j]);
+            }
+                printf(" ");
+                k = 0;
+       }
   }
       
     s2[k] = '\0';
@@ -40,7 +37,5 @@ int main ()
         printf("%c", s2[j]);
     }
       
- 
-
-  return 0;
+return 0;
 }
