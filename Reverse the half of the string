@@ -1,0 +1,39 @@
+Testcase 1:
+ input 
+      hello
+ output
+      heoll
+
+TestCase 2:
+
+  input
+     jeevan
+  output
+     jeenav
+
+explanation
+
+         In First testcase, length of the string is 5 and middle value=(l/2);
+         so reverse the string from middle value to l
+         The output is -> heoll
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() 
+{
+   char s[1000];
+   scanf("%s",s);
+   int l=strlen(s),m=l/2,i;
+   for(i=m;i<l;i++)
+   {
+       char c=s[l-1];
+       s[l-1]=s[i];
+       s[i]=c;
+   }
+   s[i]='\0';
+   printf("%s",s);
+
+    return 0;
+}
