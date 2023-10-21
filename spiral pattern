@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d\n",&n);
+    int m[1000][1000];
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            scanf("%d ",&m[i][j]);
+        }
+    }
+    int rowstart=0;
+    int rowend=n;
+    int colstart=0;
+    int colend=n;
+    while(rowstart<rowend&&colstart<colend)
+    {
+    // left to right
+    for(int i=colstart;i<colend;i++)
+    {
+        printf("%d ",m[rowstart][i]);
+    }
+    rowstart++;
+    //top to buttom
+    for(int i=rowstart;i<rowend;i++)
+    {
+        printf("%d ",m[i][colend-1]);
+    }
+    colend--; 
+    // right to left
+    for(int i=colend-1;i>=colstart;i--)
+    {
+        printf("%d ",m[rowend-1][i]);
+    }
+    rowend--;
+    //buttom to top
+    for(int i=rowend-1;i>=rowstart;i--)
+    {
+        printf("%d ",m[i][colstart]);
+    }
+    colstart++;
+    }
+
+    return 0;
+}
